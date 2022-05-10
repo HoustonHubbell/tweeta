@@ -1,16 +1,36 @@
 {
   "name": "tweeta",
   "version": "1.0.0",
-  "description": "",
+  "description": "twitter clone",
   "main": "twit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon twit.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "hootie",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.7",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoustonHubbell/tweeta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HoustonHubbell/tweeta/issues"
+  },
+  "homepage": "https://github.com/HoustonHubbell/tweeta#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

@@ -17,14 +17,14 @@ app.get('/', (req,res)=>{
     res.render("pages/index", {user:user})
 })
 
+app.get('/home', (req,res)=>{
+    res.render("pages/home", {user:user})
+})
 
 app.get('/profile', (req,res)=>{
     res.render("pages/profile", {user:user})
 })
 
-app.get('/signin', (req,res)=>{
-    res.render("pages/signin", {user:user})
-})
 
 //dynamic routes
 app.get('/:user/post', (req,res,next)=>{
