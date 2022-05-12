@@ -23,7 +23,7 @@ const PostType= new GraphQLObjectType({
     description: 'Post type',
     fields: ()=>({
         id: {type:GraphQLID},
-        userId: {type:GraphQLString},
+        userId: {type:GraphQLID},
         content: {type:GraphQLString},
         user: { 
             type: UserType,
