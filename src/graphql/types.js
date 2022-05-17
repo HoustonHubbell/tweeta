@@ -24,7 +24,8 @@ const PostType= new GraphQLObjectType({
     fields: ()=>({
         id: {type:GraphQLID},
         userId: {type:GraphQLID},
-        content: {type:GraphQLString},
+        text: {type:GraphQLString},
+        createdDate: {type:GraphQLString},
         user: { 
             type: UserType,
             resolve(parent, args) {
@@ -33,6 +34,16 @@ const PostType= new GraphQLObjectType({
         }
     })
 })
+
+const PostInputType = new GraphQLInputObjectType({
+    name: 'PostInput',
+    description: 'Answer post type',
+    fields: () =>({
+        questionId: {type: GraphQLString},
+        answer: {type: GraphQLString},
+    })
+})
+
 
 module.exports = {
     UserType,

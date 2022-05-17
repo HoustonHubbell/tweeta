@@ -12,8 +12,8 @@ module.exports = async (req, res) => {
     }
 
     try {
-        const { data } = await axios.post(process.env.GRAPHQL_ENDPOINT, 
-            {  
+        const { data } = await axios.post(process.env.GRAPHQL_ENDPOINT,
+            {
                 query: mutation,
                 variables: {
                     email: req.body.email,
@@ -25,15 +25,15 @@ module.exports = async (req, res) => {
                 headers: {
                     'Content-Type': 'application/json',
                 }
-            });   
-            
+            });
+
         const jwtToken = data.data.register
         console.log(jwtToken)
         res.cookie('jwtToken', jwtToken, { maxAge: 900000, httpOnly: true });
 
         res.redirect('/')
-    } catch(e) {
-        console.log(e)
+    } catch (e) {
+        console.log(e.response.dataq.errors.locations)
         res.redirect('/auth/register')
-    }   
+    }
 }

@@ -2,10 +2,10 @@
   "name": "tweeta",
   "version": "1.0.0",
   "description": "twitter clone",
-  "main": "twit.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon twit.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "hootie",

@@ -4,10 +4,8 @@ const unprotectedRoutes = [
         "/auth/register",
         "/graphql"
 ]
-
 const authenticate = async (req, res, next) => {
     const token = req.cookies?.jwtToken || ""
-
     try {
         const verified = jwt.verify(token, process.env.JWT_SECRET)
         req.verifiedUser = verified
@@ -15,7 +13,6 @@ const authenticate = async (req, res, next) => {
         next()
     } catch(err) {
         console.log("User verification failed")
-
         if ( unprotectedRoutes.includes(req.path) ) {
             next()
         } else {
@@ -23,5 +20,4 @@ const authenticate = async (req, res, next) => {
         }
     }
 }
-
 module.exports = { authenticate }

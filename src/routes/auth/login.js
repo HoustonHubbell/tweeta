@@ -6,7 +6,6 @@ module.exports = async (req, res) => {
             login( email: $email, password: $password ) 
         }`
 
-
     if (!req.body.email || !req.body.password) {
         res.redirect('/auth/login')
         return;
@@ -30,6 +29,7 @@ module.exports = async (req, res) => {
         res.cookie('jwtToken', jwtToken, { maxAge: 900000, httpOnly: true });
 
         res.redirect('/')
+        console.log(data)
     } catch(e) {
         console.log(e.response.data.errors)
         res.redirect('/auth/login')
